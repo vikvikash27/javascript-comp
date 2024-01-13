@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text To Speech</title>
+	</head>
+	<body>
+		<input id="message" type="text" />
+		<button class="rounded-2xl" onclick="play()">Play</button>
+		<script>
+			const speech = new SpeechSynthesisUtterance();
+			function play() {
+				const message = document.getElementById("message").value;
+				speech.lang = "en";
+				speech.text = message;
+				window.speechSynthesis.speak(speech);
+			}
+		</script>
+		<video class="background-green" id="cameraFeed" autoplay>kamera</video>
+	</body>
+</html>
